@@ -1,0 +1,67 @@
+$themes: (
+    light: (textColor: #000,
+        bg: white,
+        logo: rgb(0, 0, 0),
+        bgSoft: #f3f6f3,
+        textColorSoft: #555,
+        border: lightgray,
+        logosColor: black,
+        friendBtn: rgb(202, 206, 210),
+        primary: #3498db,
+        re:rgb(175, 52, 52),
+        gre:rgb(52, 175, 105),
+        or:rgb(219, 212, 19),
+        GROUP:rgb(204, 68, 206),
+    ),
+    dark: (logosColor: rgb(17, 163, 211),
+        friendBtn: rgb(11, 92, 168),
+        textColor: white,
+        bg: #222,
+        logo: rgb(5, 169, 246),
+        bgSoft: #333,
+        textColorSoft: rgb(12, 137, 221),
+        border: #444,
+        primary: #0d598b,
+        re:rgb(175, 52, 52),
+        gre:rgb(52, 175, 105),
+        or:rgb(231, 224, 22),
+        GROUP:rgb(204, 68, 206),
+    ),
+);
+
+@mixin themify($themes) {
+
+    @each $theme,
+    $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge($theme-map,
+                    ($key: $value, )) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+@mixin mobile {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 960px) {
+        @content;
+    }
+}

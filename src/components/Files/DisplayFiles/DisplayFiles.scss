@@ -1,0 +1,157 @@
+@import "../../../style.scss";
+.content-files{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+     @include themify($themes) {
+    .btn-lock{
+            padding: 8px 12px;
+            background-color: themed("bgSoft");
+            color: themed("textColor");
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            text-transform: uppercase;
+            font-weight: 700;
+            &:hover {
+            transition: background-color 0.3s ease;
+            background-color: #27ae60;
+                
+            }
+    }
+    .btn-unlock{
+            padding: 8px 12px;
+            background-color: themed("bgSoft");
+            color: themed("textColor");
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            text-transform: uppercase;
+            font-weight: 700;
+            &:hover {
+            transition: background-color 0.3s ease;
+                background-color: #277cae;
+            }
+    }
+}}
+
+
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    gap: 10px;
+    padding: 30px;
+    @include themify($themes) {
+    .file-card {
+        background-color: themed("bgSoft");
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+        .file-badge{
+            position: relative;
+            top: -30px;
+            right: 140px;
+            color: themed("textColorSoft");
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 400;
+            border-radius: 15px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            text-transform: uppercase;
+        }
+        .file-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-btn{
+            display: flex;
+            flex-direction: row;
+            gap:25px;
+            .section{
+                p{
+                    font-size: 10px;
+                    font-weight: bold;
+                }
+            }
+        
+            .btn-container{
+                display: flex;
+                flex-direction: column;
+                gap:15px;
+                .btn-change{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    .up-btn{
+                        display: flex;
+                        flex-direction: column;
+                        gap:5px;
+                        padding: 1px;
+                    }
+                    .download-button {
+                        padding: 0px 4px;
+                        background-color: #2ecc71;
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        &:hover {
+                            background-color: #27ae60;
+                        }
+                    }
+
+                    .update-button{
+                        padding: 0px 4px;
+                        background-color: #2ec7cc;
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #277cae;
+                        }
+                    }
+            }
+            .btn-report{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                .report-button{
+                    font-size:9px;
+                    padding: 2px 4px;
+                    background-color: #ca4113;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                    background-color: #a33e1c;
+                    }
+                }
+            }
+            }
+           
+        }
+    }
+}
+}

@@ -1,0 +1,165 @@
+@import "../../style.scss";
+
+.groups-grid {
+     @include themify($themes) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    // background-color: themed("bgSoft");
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .group-card {
+        background-color: themed("bg");
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+        color: themed("textColor");
+
+        .group-badge {
+            position: relative;
+            top: -30px;
+            right: 60px;
+            // background-color: themed("GROUP");
+            color: themed("textColorSoft");
+            padding: 2px 5px;
+            font-size: 10px;
+            font-weight: 400;
+            border-radius: 15px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            text-transform: uppercase;
+        }
+        .group-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: themed("textColor");
+
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+        .btn-go{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            .join-button {
+            margin-top: 10px;
+            padding: 4px 4px;
+            background-color: themed("primary");
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(themed("primary"), 10%);
+            }
+
+            &:active {
+                background-color: lighten(themed("primary"), 5%);
+            }
+
+            @include mobile {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            }
+
+            
+            .inf-button{
+              margin-top: 10px;
+            padding: 4px 4px;
+            background-color: themed("gre");
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(themed("primary"), 10%);
+            }
+
+            &:active {
+                background-color: lighten(themed("primary"), 5%);
+            }
+
+            @include mobile {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            }
+ 
+            .delete-button{
+                margin-top: 10px;
+                padding: 4px 4px;
+                background-color: themed("re");
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 10px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: darken(themed("primary"), 10%);
+                }
+
+                &:active {
+                    background-color: lighten(themed("primary"), 5%);
+                }
+
+                @include mobile {
+                    font-size: 12px;
+                    padding: 6px 12px;
+                }
+            }
+        }
+        .join-button {
+            margin-top: 10px;
+            padding: 4px 4px;
+            background-color: themed("primary");
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(themed("primary"), 10%);
+            }
+
+            &:active {
+                background-color: lighten(themed("primary"), 5%);
+            }
+
+            @include mobile {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+       
+    }
+}
+}

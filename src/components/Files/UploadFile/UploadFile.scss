@@ -1,0 +1,31 @@
+@import "../../../style.scss";
+.upload-container {
+     @include themify($themes) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: themed("bgSoft");
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    .file-input {
+        background-color: themed("bgSoft");
+        margin-right: 10px;
+    }
+
+    .upload-button {
+        padding: 8px 15px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #2980b9;
+        }
+    }
+}}
